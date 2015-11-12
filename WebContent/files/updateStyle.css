@@ -1,0 +1,45 @@
+.jumbotron {
+	background: url('grey-pattern-20667.jpg') no-repeat center center;
+	text-shadow: black 0.4em 0.4em 0.4em;
+	min-height: 750px;
+}
+
+.message {
+	color: white
+}
+
+.damnButtons {
+	padding-top: 100px
+}
+
+.damnImage {
+	background: url('phonebook.png')
+}
+
+h2 {
+	font-weight: bold;
+	font-family: verdana;
+}
+
+.logo {
+	height: 70px;
+	width: 70px;
+}
+
+.nav-pills a {
+	color: black;
+}
+
+.nav-pills>li.active>a {
+	background-color: grey;
+}
+
+.nav-pills>li.active>a:hover {
+	background-color: grey;
+	color: white;
+}
+
+.errMessage {
+	color: red;
+	text-align: center;
+}

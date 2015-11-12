@@ -1,0 +1,88 @@
+.jumbotron {
+	background: url('grey-pattern-20667.jpg') no-repeat center center;
+	text-shadow: black 0.2em 0.2em 0.2em;
+	min-height: 350px;
+}
+
+.whiteMessage {
+	color: white
+}
+
+.blackMessage {
+	color: black
+}
+
+.damnButtons {
+	padding-top: 100px
+}
+
+.damnImage {
+	background: url('phonebook.png')
+}
+
+.container pull-left col-md-6 {
+	color: white;
+}
+
+thead {
+	background-color: grey;
+	color: white;
+	text-shadow: black 0.2em 0.2em 0.2em;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+	text-decoration: none;
+	color: white;
+	background-color: grey;
+}
+
+h2 {
+	font-weight: bold;
+	font-family: verdana;
+}
+
+.logo {
+	height: 70px;
+	width: 70px;
+}
+
+.nav-pills a {
+	color: black;
+}
+
+.nav-pills>li.active>a {
+	background-color: grey;
+}
+
+.nav-pills>li.active>a:hover {
+	background-color: grey;
+	color: white;
+}
+
+.message {
+	color: white
+}
+
+.glyphicon glyphicon-user { @
+	icon-font-path: url('fonts//glyphicons-halflings-regular.ttf')
+}
+
+.damnSubmitButtons {
+	width: 110px;
+}
+
+.btn {
+	background-color: grey;
+	border-color: white;
+	color: white;
+}
+
+.btn:hover {
+	background-color: black;
+	border-color: white;
+	color: white;
+}
+
+#searchBox {
+	width: 300px;
+}
