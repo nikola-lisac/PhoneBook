@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import stuff.User;
+import beans.User;
+import dao.UserDatabaseService;
 
 /**
  * Servlet implementation class RegisterServlet

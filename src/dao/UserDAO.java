@@ -1,6 +1,8 @@
-package stuff;
+package dao;
 
 import java.util.List;
+
+import beans.User;
 
 public interface UserDAO {
 

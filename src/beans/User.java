@@ -1,4 +1,4 @@
-package stuff;
+package beans;
 
 import java.io.Serializable;
 

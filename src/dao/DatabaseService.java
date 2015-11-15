@@ -1,4 +1,4 @@
-package servlets;
+package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,9 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import stuff.MyConnection;
-import stuff.Person;
-import stuff.PersonDAO;
+import beans.Person;
 
 /**
  * Class for searching the database It includes methods for searching with
