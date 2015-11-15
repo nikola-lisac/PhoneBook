@@ -152,7 +152,10 @@ public class DatabaseService implements PersonDAO {
 		}
 
 	}
-
+	
+	/**
+	 * Get user from database based on userID
+	 */
 	@Override
 	public Person getPerson(String userID) {
 		String sqlQuery = "SELECT * FROM person WHERE id=?";

@@ -10,6 +10,9 @@ import beans.User;
 
 public class UserDatabaseService implements UserDAO{
 
+	/**
+	 * Get user from table users based on the passed username and password
+	 */
 	@Override
 	public User validate(String username, String password) {
 		User user = null;
@@ -38,6 +41,9 @@ public class UserDatabaseService implements UserDAO{
 		return user;
 	}
 	
+	/**
+	 * Register user, add user to the table users
+	 */
 	@Override
 	public void register(User u) {
 		String sqlQuery = "INSERT INTO user(username,password,firstName,lastName,email) VALUES(?,?,?,?,?)";

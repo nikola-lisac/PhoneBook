@@ -29,15 +29,21 @@ public class LoginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		UserDatabaseService uds = new UserDatabaseService();
-		User u = uds.validate(username, password);
+		User u = uds.validate(username, password); // find user in the database with passed username and password
+		// if there isnt a user with that username/password
 		if(u == null){
+			// set currentUser to null 
 			request.getSession().setAttribute("currentUser", null);
+			// set the message to be displayed
 			request.getSession().setAttribute("message","Wrong username or password, try again!");
 			response.sendRedirect("login.jsp");
-		} else {
+		} 
+		// if there is a user in the database with that username and password
+		else {
+			// set user as current
 			request.getSession().setAttribute("currentUser", u);
 			DatabaseService ds = new DatabaseService();
-			List<Person> peopleList = ds.getAllPeople();
+			List<Person> peopleList = ds.getAllPeople(); // get list of people if there was some changes before
 			request.getSession().setAttribute("peopleList", peopleList);
 			response.sendRedirect("welcome.jsp");
 			

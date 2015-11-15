@@ -15,7 +15,7 @@ import dao.DatabaseService;
  * Servlet implementation class UpdateServlet
  */
 @WebServlet("/addPerson")
-public class AddUserServlet extends HttpServlet {
+public class AddPersonServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**

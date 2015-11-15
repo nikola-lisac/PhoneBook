@@ -26,14 +26,16 @@ public class AdminMenuServlet extends HttpServlet {
 		String personID = request.getParameter("personID");
 		String action = request.getParameter("action");
 		DatabaseService ds = new DatabaseService();
+		
+		// if selected option is "delete" delete person with id personID from database
 		if(action.equals("delete")){
-			ds.deletePersonFromDatabase(personID);
-			List<Person> peopleList = ds.getAllPeople();
-			request.getSession().setAttribute("peopleList", peopleList);
-			request.getSession().setAttribute("message", "Person has been deleted.");
+			ds.deletePersonFromDatabase(personID); // deleting the person
+			List<Person> peopleList = ds.getAllPeople(); // getting new list of people after deleting
+			request.getSession().setAttribute("peopleList", peopleList); // setting new list of people as personList
+			request.getSession().setAttribute("message", "Person has been deleted."); // setting a message to be displayed
 			response.sendRedirect("welcome.jsp");
-	}
-		else {
+		}
+		else { // if "edit" is selected, redirect to edit.jsp and show all current data for that user
 			Person person = ds.getPerson(personID);
 			request.getSession().setAttribute("personToEdit",person);
 			response.sendRedirect("edit.jsp");

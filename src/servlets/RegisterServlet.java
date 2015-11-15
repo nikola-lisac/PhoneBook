@@ -24,6 +24,7 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		// get values from the form
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String confirmPassword = request.getParameter("passwordConfirm");
@@ -33,15 +34,20 @@ public class RegisterServlet extends HttpServlet {
 		String role = "user";
 		Validation valid = new Validation();
 		UserDatabaseService udbs = new UserDatabaseService();
-	
+		// if all data is valid
 		if (udbs.isUsernameAvailable(username) && password.equals(confirmPassword) && valid.areLettersAndDigits(password)
 				&& valid.areLettersAndDigits(username) && valid.areLetters(firstName) && valid.areLetters(lastName)
 				&& valid.isValidEmail(email)) {
+			// create new user instance
 			User user = new User(username,password,firstName,lastName,email,role);
+			// register user in the database
 			udbs.register(user);
+			// set message
 			request.getSession().setAttribute("message", "You have successfully registered on PhoneBook!");
 			response.sendRedirect("login.jsp");
-		} else {
+		} 
+		// if input is invalid or username is taken, set message and redirect 
+		else {
 			request.getSession().setAttribute("message", "Username is unavailable or input isn't valid, try again!");
 			response.sendRedirect("register.jsp");
 		}
