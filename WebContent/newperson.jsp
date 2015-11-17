@@ -43,7 +43,7 @@
 					<p>Add a new person to the list.</p>
 				</div>
 				<div class="col-md-8 pull-left">
-					<form class="form-horizontal" id="addUser">
+					<form class="form-horizontal" id="addUser" method="post" action="addPerson">
 						<div class="form-group">
 							<label class="control-label col-sm-3 ">First name:</label>
 							<div class="col-sm-9">

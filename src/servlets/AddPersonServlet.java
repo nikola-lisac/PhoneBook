@@ -41,7 +41,7 @@ public class AddPersonServlet extends HttpServlet {
 		if (val.areLetters(firstName) && val.areLetters(lastName) && val.areLetters(gender)
 				&& val.areLettersDigitsAndSpaces(address) && val.areLettersAndSpaces(city) && val.areDigits(phone)
 				&& val.isValidEmail(email)) {
-
+			
 			Person person = new Person();
 			person.setFirstName(firstName);
 			person.setLastName(lastName);
