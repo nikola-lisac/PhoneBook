@@ -41,7 +41,7 @@ $(function(){
 			},
 			city: {
 				required: true,
-				lettersonly: true
+				pattern: /^[a-zA-Z0-9 ]+$/
 			},
 			phone: {
 				required: true,
@@ -74,7 +74,7 @@ $(function(){
 			},
 			city: {
 				required: 'Please enter the city',
-				lettersonly: 'Please enter only letters'
+				pattern: 'Please enter only letters and spaces'
 			}
 		}
 	});
