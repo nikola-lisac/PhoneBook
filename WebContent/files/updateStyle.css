@@ -43,3 +43,12 @@ h2 {
 	color: red;
 	text-align: center;
 }
+
+#usernameError {
+	display: inline;
+	color: red;
+}
+
+.correct {
+	color: green;
+}

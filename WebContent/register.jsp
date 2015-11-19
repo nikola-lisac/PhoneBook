@@ -46,7 +46,8 @@
 						<div class="form-group">
 							<label class="control-label col-sm-3">Username</label>
 							<div class="col-sm-9">
-								<input type="text" name="username" class="form-control">
+								<input type="text" id="username" name="username" class="form-control">
+								<label id="usernameError"></label>
 							</div>
 						</div>
 						<div class="form-group">
@@ -95,5 +96,6 @@
 	<script src="javascript/jquery.validate.js"></script>
 	<script src="javascript/additional-methods.min.js"></script>
 	<script src="javascript/validationRegister.js"></script>
+	<script src="javascript/checkUsername.js"></script>
 </body>
 </html>
