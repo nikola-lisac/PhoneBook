@@ -25,14 +25,10 @@ public class ajaxUsernameCheck extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("pozvalo je servlet");
 		String username = request.getParameter("username");
 		UserDatabaseService uds = new UserDatabaseService();
 		List<String> listOfUsernames = uds.getAllUsernames();
 		boolean isAvailable = true;
-		for (String uname : listOfUsernames) {
-			System.out.println(uname);
-		}
 		for (String uname : listOfUsernames) {
 			if (uname.equals(username)) {
 				isAvailable = false;
@@ -41,11 +37,11 @@ public class ajaxUsernameCheck extends HttpServlet {
 		}
 		String resp = "";
 		if (isAvailable) {
-			resp="true";
-			//resp = "Username is available.";
+			resp = "true";
+			// resp = "Username is available.";
 		} else {
-			//resp = "Username is not available.";
-			resp="false";
+			// resp = "Username is not available.";
+			resp = "false";
 		}
 		response.setContentType("text/html");
 		response.getWriter().write(resp);
