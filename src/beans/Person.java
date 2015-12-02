@@ -1,7 +1,11 @@
 package beans;
 
 import java.io.Serializable;
-
+/**
+ * Bean class which defines a person 
+ * @author Nikola
+ *
+ */
 public class Person implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private String firstName;
@@ -13,18 +17,16 @@ public class Person implements Serializable {
 	private String email;
 	private String id;
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
+	/**
+	 * Default constructor
+	 */
 	public Person() {
 
 	}
-
+	
+	/**
+	 * Overloaded constructor which uses all data fields for initialization
+	 */
 	public Person(String firstName, String lastName, String gender, String address, String city, String phone,
 			String email, String id) {
 		this.firstName = firstName;
@@ -96,5 +98,13 @@ public class Person implements Serializable {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 }

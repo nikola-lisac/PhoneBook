@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.Person;
 import dao.DatabaseService;
+import util.Validation;
 
 /**
  * Servlet implementation class SearchServlet

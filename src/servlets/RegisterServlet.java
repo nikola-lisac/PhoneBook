@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import beans.User;
 import dao.UserDatabaseService;
+import util.Validation;
 
 /**
  * Servlet implementation class RegisterServlet

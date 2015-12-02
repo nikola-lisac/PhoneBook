@@ -29,7 +29,7 @@ public class DatabaseService implements PersonDAO {
 	 * 
 	 * @param name
 	 *            keyword to search the fields in the database
-	 * @return list of People objects whoose field firstName, lastName or city
+	 * @return list of People objects whose field firstName, lastName or city
 	 *         is equal to the keyword
 	 */
 	@Override
@@ -37,12 +37,14 @@ public class DatabaseService implements PersonDAO {
 		String sqlQuery = "SELECT * FROM person WHERE firstName=? OR lastName=? OR city=?";
 		try (Connection connection = MyConnection.connectToDb();
 				PreparedStatement stmnt = connection.prepareStatement(sqlQuery)) {
-
+			
+			// setting prepatedStatement 
 			stmnt.setString(1, keyword);
 			stmnt.setString(2, keyword);
 			stmnt.setString(3, keyword);
 			try (ResultSet rs = stmnt.executeQuery()) {
 				while (rs.next()) {
+					// instantiating person based on the result from database
 					Person person = new Person();
 					person.setFirstName(rs.getString(1));
 					person.setLastName(rs.getString(2));
@@ -52,6 +54,7 @@ public class DatabaseService implements PersonDAO {
 					person.setPhone(rs.getString(6));
 					person.setEmail(rs.getString(7));
 					person.setId(rs.getString(8));
+					// adding a person to the list of people
 					this.listOfPeople.add(person);
 				}
 			}
@@ -65,12 +68,16 @@ public class DatabaseService implements PersonDAO {
 
 	/**
 	 * Adding a person to the database
+	 * 
+	 * @param p
+	 *            person instance which contains data fields to be added to the database
 	 */
 	@Override
 	public void addPersonToPhonebook(Person p) {
 		String sqlQuery = "INSERT INTO person(firstName,lastName,gender,address,city,phone,email) VALUES (?,?,?,?,?,?,?)";
 		try (Connection connection = MyConnection.connectToDb();
 				PreparedStatement stmnt = connection.prepareStatement(sqlQuery)) {
+			// setting prepared statement
 			stmnt.setString(1, p.getFirstName());
 			stmnt.setString(2, p.getLastName());
 			stmnt.setString(3, p.getGender());
@@ -86,7 +93,9 @@ public class DatabaseService implements PersonDAO {
 	}
 
 	/**
-	 * Gett all the people from db and put them as Person instances in the list
+	 * Get all the people from database and put them as Person instances in the list
+	 * 
+	 * @return list of all people in the database
 	 */
 	@Override
 	public List<Person> getAllPeople() {
@@ -115,7 +124,10 @@ public class DatabaseService implements PersonDAO {
 
 		return listOfPeople;
 	}
-
+	
+	/**
+	 * Edit the person in the database based on its id
+	 */
 	@Override
 	public void editPersonFromPhonebook(Person p) {
 		String sqlQuery = "UPDATE person SET firstName=?,lastName=?,gender=?,address=?,city=?,phone=?,email=? WHERE id=?";
@@ -137,7 +149,7 @@ public class DatabaseService implements PersonDAO {
 	}
 
 	/**
-	 * Delete person from the database
+	 * Delete person from the database by its id
 	 */
 	@Override
 	public void deletePersonFromDatabase(String userID) {
@@ -154,7 +166,10 @@ public class DatabaseService implements PersonDAO {
 	}
 	
 	/**
-	 * Get user from database based on userID
+	 * Get person from database based on userID
+	 * 
+	 * @param userID  id of the person
+	 * @return person instance whose id is passed as parameter
 	 */
 	@Override
 	public Person getPerson(String userID) {
@@ -165,6 +180,7 @@ public class DatabaseService implements PersonDAO {
 			stmnt.setString(1, userID);
 			try (ResultSet rs = stmnt.executeQuery()) {
 				while (rs.next()) {
+					// setting fields of the person instance
 					person = new Person();
 					person.setFirstName(rs.getString(1));
 					person.setLastName(rs.getString(2));

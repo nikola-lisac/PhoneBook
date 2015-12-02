@@ -7,11 +7,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import beans.User;
-
+/**
+ * Class for implementation of UserDAO with concrete methods which communicate with the "user" table
+ * @author Nikola
+ *
+ */
 public class UserDatabaseService implements UserDAO{
 
 	/**
-	 * Get user from table users based on the passed username and password
+	 * Get user instance from table users based on the passed username and password
+	 * @return user instance
 	 */
 	@Override
 	public User validate(String username, String password) {
@@ -31,7 +36,6 @@ public class UserDatabaseService implements UserDAO{
 					user.setLastName(rs.getString(4));
 					user.setEmail(rs.getString(5));
 					user.setRole(rs.getString(6));
-					break;
 				}
 			}
 		} catch (SQLException e) {
@@ -67,6 +71,7 @@ public class UserDatabaseService implements UserDAO{
 	
 	/**
 	 * Get all usernames from the database
+	 * @return list of all usernames in the database
 	 */
 	@Override
 	public List<String> getAllUsernames() {

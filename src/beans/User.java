@@ -2,6 +2,11 @@ package beans;
 
 import java.io.Serializable;
 
+/**
+ * Class for defining user of the app
+ * @author Nikola
+ *
+ */
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String username;
@@ -11,10 +16,14 @@ public class User implements Serializable{
 	private String email;
 	private String role;
 	
+	
 	public User() {
 		
 	}
-
+	
+	/**
+	 * constructor which uses all data fields for initialization of the instance
+	 */
 	public User(String username, String password, String firstName, String lastName, String email, String role){
 		this.username = username;
 		this.password = password;
