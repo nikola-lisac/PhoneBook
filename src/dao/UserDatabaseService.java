@@ -95,7 +95,7 @@ public class UserDatabaseService implements UserDAO{
 	/**
 	 * Check if username is available in the database or it's already taken
 	 * @param username  username to check availability in the db
-	 * @return  true if it is avalable, false if it's taken
+	 * @return  true if it is available, false if it's taken
 	 */
 	public boolean isUsernameAvailable(String username){
 		List<String> list = this.getAllUsernames();

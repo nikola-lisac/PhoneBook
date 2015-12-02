@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="files/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="files/style.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 <title>Home</title>
 </head>
 <body>
@@ -24,7 +24,7 @@
 		<br />
 		<div class="page-header">
 			<div class="row">
-				<img class="logo pull-left" src="files/p_logo.png" />
+				<img class="logo pull-left" src="css/images/p_logo.png" />
 				<h2 class="pull-left">PhoneBook.</h2>
 				<c:if test="${empty currentUser}">
 					<ul class="nav nav-pills grey pull-right">
@@ -61,9 +61,9 @@
 						<a href="search.jsp" class="btn btn-info damnSubmitButtons">Search</a>
 						<c:if test="${not empty currentUser}">
 							<a href="newperson.jsp" class="btn btn-info damnSubmitButtons">Make
-								entry</a>
+								Entry</a>
 							<c:if test="${currentUser.role == 'admin'}">
-								<a href="adminMenu.jsp" class="btn btn-info damnSubmitButtons">AdminMenu</a>
+								<a href="adminMenu.jsp" class="btn btn-info damnSubmitButtons">Admin Menu</a>
 							</c:if>
 						</c:if>
 					</div>

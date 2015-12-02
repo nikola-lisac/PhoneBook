@@ -5,8 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="files/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="files/updateStyle.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/updateStyle.css" />
 <title>Register</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
 		<br />
 		<div class="page-header">
 			<div class="row">
-				<img class="logo pull-left" src="files/p_logo.png" />
+				<img class="logo pull-left" src="css/images/p_logo.png" />
 				<h2 class="pull-left">PhoneBook.</h2>
 				<ul class="nav nav-pills grey pull-right">
 					<li role="presentation" class="active"><a href="welcome.jsp">Home</a></li>

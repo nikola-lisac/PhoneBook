@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" type="text/css" href="files/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="files/style.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 <title>Phonebook search</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
 		<br />
 		<div class="page-header">
 			<div class="row">
-				<img class="logo pull-left" src="files/p_logo.png" />
+				<img class="logo pull-left" src="css/images/p_logo.png" />
 				<h2 class="pull-left">PhoneBook.</h2>
 				<c:if test="${empty currentUser}">
 					<ul class="nav nav-pills grey pull-right">
@@ -62,7 +62,7 @@
 					</form>
 				</div>
 				<div class="pull-right col-md-4">
-					<img class="img-responsive" src="files/phonebook.png">
+					<img class="img-responsive" src="css/images/phonebook.png">
 				</div>
 			</div>
 		</div>

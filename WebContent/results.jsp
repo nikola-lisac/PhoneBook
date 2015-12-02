@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="java.util.ArrayList"
-	import="stuff.Person"%>
+	import="beans.Person"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" type="text/css" href="files/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="files/style.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 <title>Search results</title>
 </head>
 <body>
@@ -26,7 +26,7 @@
 		<br />
 		<div class="page-header">
 			<div class="row">
-				<img class="logo pull-left" src="files/p_logo.png" />
+				<img class="logo pull-left" src="css/images/p_logo.png" />
 				<h2 class="pull-left">PhoneBook.</h2>
 				<c:if test="${empty currentUser}">
 					<ul class="nav nav-pills grey pull-right">

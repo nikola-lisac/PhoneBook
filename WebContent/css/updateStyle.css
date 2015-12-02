@@ -1,5 +1,5 @@
 .jumbotron {
-	background: url('grey-pattern-20667.jpg') no-repeat center center;
+	background: url('images/grey-pattern-20667.jpg') no-repeat center center;
 	text-shadow: black 0.4em 0.4em 0.4em;
 	min-height: 750px;
 }
@@ -13,7 +13,7 @@
 }
 
 .damnImage {
-	background: url('phonebook.png')
+	background: url('images/phonebook.png')
 }
 
 h2 {

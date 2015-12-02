@@ -1,7 +1,7 @@
 .jumbotron {
-	background: url('grey-pattern-20667.jpg') no-repeat center center;
+	background: url('images/grey-pattern-20667.jpg') no-repeat center center;
 	text-shadow: black 0.2em 0.2em 0.2em;
-	min-height: 300px;
+	min-height: 350px;
 }
 
 .whiteMessage {
@@ -17,7 +17,7 @@
 }
 
 .damnImage {
-	background: url('phonebook.png')
+	background: url('images/phonebook.png')
 }
 
 .container pull-left col-md-6 {
@@ -63,7 +63,26 @@ h2 {
 	color: white
 }
 
-.daaamnImg {
-	height: 250px;
-	width: 250px;
+.glyphicon glyphicon-user { @
+	icon-font-path: url('fonts//glyphicons-halflings-regular.ttf')
+}
+
+.damnSubmitButtons {
+	width: 110px;
+}
+
+.btn {
+	background-color: grey;
+	border-color: white;
+	color: white;
+}
+
+.btn:hover {
+	background-color: black;
+	border-color: white;
+	color: white;
+}
+
+#searchBox {
+	width: 300px;
 }

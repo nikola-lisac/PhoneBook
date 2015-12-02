@@ -1,7 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +14,7 @@ import dao.UserDatabaseService;
  * Servlet implementation class ajaxUsernameCheck
  */
 @WebServlet("/usernameCheck")
-public class ajaxUsernameCheck extends HttpServlet {
+public class AjaxUsernameCheck extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -24,25 +23,18 @@ public class ajaxUsernameCheck extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// username to check
 		String username = request.getParameter("username");
 		UserDatabaseService uds = new UserDatabaseService();
-		List<String> listOfUsernames = uds.getAllUsernames();
-		boolean isAvailable = true;
-		for (String uname : listOfUsernames) {
-			if (uname.equals(username)) {
-				isAvailable = false;
-				break;
-			}
-		}
 		String resp = "";
-		if (isAvailable) {
+		// if username is available, set response to true
+		if(uds.isUsernameAvailable(username)){
 			resp = "true";
-			// resp = "Username is available.";
-		} else {
-			// resp = "Username is not available.";
+		}
+		else {
 			resp = "false";
 		}
+
 		response.setContentType("text/html");
 		response.getWriter().write(resp);
 

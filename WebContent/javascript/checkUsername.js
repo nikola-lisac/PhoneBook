@@ -12,7 +12,7 @@ $(document).ready(function() {
 			}
 		}).done(function(resp) {
 			if(resp === 'true'){
-				$("#usernameError").html("Username available").css("color","green");
+				$("#usernameError").html("Username is available").css("color","green");
 			} else {
 				$("#usernameError").html("Username is not available.");
 			}

@@ -1,6 +1,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -54,6 +55,11 @@ public class AddPersonServlet extends HttpServlet {
 
 			DatabaseService data = new DatabaseService();
 			data.addPersonToPhonebook(person);
+			// set message to be displayed
+			request.getSession().setAttribute("message", "Person has been added.");
+			// updated list of all people
+			List<Person> peopleList = data.getAllPeople();
+			request.getSession().setAttribute("peopleList", peopleList);
 			response.sendRedirect("welcome.jsp");
 		} else { // if one or more input fields are invalid, go to update.html
 					// again

@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 
 			if (u.getRole().equals("admin")) {
 				DatabaseService ds = new DatabaseService();
-				List<Person> peopleList = ds.getAllPeople(); // get list of people for the admin menu
+				List<Person> peopleList = ds.getAllPeople(); // get updated list of people for the admin menu
 				request.getSession().setAttribute("peopleList", peopleList);
 			}
 			response.sendRedirect("welcome.jsp");
